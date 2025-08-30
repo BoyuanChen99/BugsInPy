@@ -12,11 +12,11 @@ The objective of this work is to support reproducible research on real-world Pyt
 Command | Description
 --- | ---
 info | Get the information of a specific project or a specific bug
-checkout	| Checkout buggy or fixed version project from dataset
-compile	| Compile sources from project that have been checkout
-test	| Run test case that relevant with bug, single-test case from input user, or all test cases from project
-coverage |	Run code coverage analysis from test case that relevant with bug, single-test case from input user, or all test cases
-mutation |	Run mutation analysis from input user or test case that relevant with bug
+checkout | Checkout buggy or fixed version project from dataset
+compile | Compile sources from project that have been checkout
+test | Run test case that relevant with bug, single-test case from input user, or all test cases from project
+coverage | Run code coverage analysis from test case that relevant with bug, single-test-case from input user, or all test cases
+mutation | Run mutation analysis from input user or test case that relevant with bug
 fuzz | Run a test input generation from specific bug
 
 # Example BugsInPy Command
@@ -28,3 +28,11 @@ fuzz | Run a test input generation from specific bug
     - `bugsinpy-compile`
     - `bugsinpy-test`
 
+# My own examples
+## Example 1: tqdm
+`bugsinpy-info -p tqdm`\
+`bugsinpy-checkout -p tqdm -i 1` (We are cloning the github repo for the first bug)  
+`cd framework/bin/temp/tqdm`\
+(Note that you can do docker here)\
+`bugsinpy-compile`\
+`bugsinpy-test`
