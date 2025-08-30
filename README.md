@@ -30,9 +30,10 @@ fuzz | Run a test input generation from specific bug
 
 # My own examples
 ## Example 1: tqdm
+`export PATH=$PATH:<bugsinpy_path>/framework/bin`
 `bugsinpy-info -p tqdm`\
 `bugsinpy-checkout -p tqdm -i 1` (We are cloning the github repo for the first bug)  
 `cd framework/bin/temp/tqdm`\
-(Note that you can do docker here)\
+(Note that you can do docker here, or create a virtual env installing the required packages)\
 `bugsinpy-compile`\
 `bugsinpy-test`
