@@ -30,10 +30,14 @@ fuzz | Run a test input generation from specific bug
 
 # My own examples
 ## Example 1: tqdm
-`export PATH=$PATH:<bugsinpy_path>/framework/bin`
+`export PATH=$PATH:<bugsinpy_path>/framework/bin` (always needed. You can set it permanent.)
 `bugsinpy-info -p tqdm`\
 `bugsinpy-checkout -p tqdm -i 1` (We are cloning the github repo for the first bug)  
 `cd framework/bin/temp/tqdm`\
 (Note that you can do docker here, or create a virtual env installing the required packages)\
+`cd ../../../../projects/tqdm/bugs/1`\
+`pip install -r requirements.txt` (Go back to the project bug folder and install the env for testing. 'pkg-resources==0.0.0' can be skipped if throws error)
+`cd ../../../../framework/bin/temp/tqdm/`\
+`python3 -m pytest tqdm/tests/tests_contrib.py::test_enumerate` (We come back and run the testing script)
 `bugsinpy-compile`\
 `bugsinpy-test`
